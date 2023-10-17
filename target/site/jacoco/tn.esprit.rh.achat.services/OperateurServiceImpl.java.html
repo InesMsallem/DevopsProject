@@ -8,13 +8,13 @@ import tn.esprit.rh.achat.repositories.OperateurRepository;
 import java.util.List;
 
 @Service
-<span class="nc" id="L11">public class OperateurServiceImpl implements IOperateurService {</span>
+<span class="fc" id="L11">public class OperateurServiceImpl implements IOperateurService {</span>
 
 	@Autowired
 	OperateurRepository operateurRepository;
 	@Override
 	public List&lt;Operateur&gt; retrieveAllOperateurs() {
-<span class="nc" id="L17">		return (List&lt;Operateur&gt;) operateurRepository.findAll();</span>
+<span class="fc" id="L17">		return (List&lt;Operateur&gt;) operateurRepository.findAll();</span>
 	}
 
 	@Override
@@ -25,9 +25,9 @@ import java.util.List;
 
 	@Override
 	public void deleteOperateur(Long id) {
-<span class="nc" id="L28">		operateurRepository.deleteById(id);</span>
+<span class="fc" id="L28">		operateurRepository.deleteById(id);</span>
 		
-<span class="nc" id="L30">	}</span>
+<span class="fc" id="L30">	}</span>
 
 	@Override
 	public Operateur updateOperateur(Operateur o) {
@@ -42,4 +42,4 @@ import java.util.List;
 	}
 
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
