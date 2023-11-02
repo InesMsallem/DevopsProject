@@ -4,3 +4,4 @@
 !pom.xml
 !.gitignore
 !Dockerfile
+!docker-compose.yml
