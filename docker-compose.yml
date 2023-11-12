@@ -14,12 +14,18 @@ services:
       - db-mysql
 
   db-mysql:
-    image: mysql:latest
+    image: mysql:5.7
+    container_name: mysql
     environment:
-      MYSQL_DATABASE: achat
       MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: achat
+      MYSQL_USER: ines
+      MYSQL_PASSWORD: root
     ports:
       - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
 
-
+volumes:
+    mysql_data:
 
