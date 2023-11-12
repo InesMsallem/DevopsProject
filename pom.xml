@@ -16,7 +16,7 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
-		<sonar.login>squ_6ca2d3e2da57d2c97fd2fd693f7b68a9a650b504</sonar.login>
+		<sonar.login>squ_af5e61fa8247d97c7dcb448426d6cfb188e1e399</sonar.login>
 	</properties>
 	<dependencies>
 		<dependency>
