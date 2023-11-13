@@ -14,17 +14,16 @@ services:
 
   db-mysql:
     image: mysql:5.7
-    container_name: mysql
+    container_name: mysql_new
     restart: unless-stopped
     environment:
       MYSQL_DATABASE: achat
       MYSQL_USER: ines
       MYSQL_PASSWORD: ines123
     ports:
-      - "3306:3306"
+      - "3307:3306"
     volumes:
       - mysql_data:/var/lib/mysql
     command: --init-file /docker-entrypoint-initdb.d/init.sql
-
 volumes:
   mysql_data:
