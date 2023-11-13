@@ -5,7 +5,7 @@ FROM openjdk:8
 WORKDIR /app
 
 # Copy the JAR file from the Jenkins workspace to the container
-COPY achat/target/achat-1.0.jar /app/
+COPY target/achat-1.0.jar /app/
 
 # Expose the port the app runs on
 EXPOSE 8089
