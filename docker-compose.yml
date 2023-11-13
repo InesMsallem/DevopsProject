@@ -20,7 +20,7 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: achat
       MYSQL_USER: ines
-      MYSQL_PASSWORD: root
+      MYSQL_PASSWORD: ines123
     ports:
       - "3306:3306"
     volumes:
