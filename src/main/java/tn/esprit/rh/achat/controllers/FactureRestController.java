@@ -1,14 +1,25 @@
 package tn.esprit.rh.achat.controllers;
 
-import io.swagger.annotations.Api;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.web.bind.annotation.*;
-import tn.esprit.rh.achat.entities.Facture;
-import tn.esprit.rh.achat.services.IFactureService;
-
 import java.util.Date;
 import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import tn.esprit.rh.achat.entities.Facture;
+import tn.esprit.rh.achat.entities.dto.FactureRequestModel;
+import tn.esprit.rh.achat.services.IFactureService;
+
+import io.swagger.annotations.Api;
 
 
 @RestController
@@ -20,54 +31,44 @@ public class FactureRestController {
     @Autowired
     IFactureService factureService;
 
-    // http://localhost:8089/SpringMVC/facture/retrieve-all-factures
     @GetMapping("/retrieve-all-factures")
     @ResponseBody
     public List<Facture> getFactures() {
-        List<Facture> list = factureService.retrieveAllFactures();
-        return list;
+        return factureService.retrieveAllFactures();
     }
 
-    // http://localhost:8089/SpringMVC/facture/retrieve-facture/8
+  
     @GetMapping("/retrieve-facture/{facture-id}")
     @ResponseBody
     public Facture retrieveFacture(@PathVariable("facture-id") Long factureId) {
         return factureService.retrieveFacture(factureId);
     }
 
-    // http://localhost:8089/SpringMVC/facture/add-facture/{fournisseur-id}
     @PostMapping("/add-facture")
     @ResponseBody
-    public Facture addFacture(@RequestBody Facture f) {
-        Facture facture = factureService.addFacture(f);
-        return facture;
+    public Facture addFacture(@RequestBody FactureRequestModel f) {
+        return factureService.addFacture(f);
     }
-
-    /*
-     * une facture peut etre annulé si elle a été saisie par erreur Pour ce
-     * faire, il suffit de mettre le champs active à false
-     */
-    // http://localhost:8089/SpringMVC/facture/cancel-facture/{facture-id}
+    
     @PutMapping("/cancel-facture/{facture-id}")
     @ResponseBody
     public void cancelFacture(@PathVariable("facture-id") Long factureId) {
         factureService.cancelFacture(factureId);
     }
 
-    // http://localhost:8089/SpringMVC/facture/getFactureByFournisseur/{fournisseur-id}
+    
     @GetMapping("/getFactureByFournisseur/{fournisseur-id}")
     @ResponseBody
     public List<Facture> getFactureByFournisseur(@PathVariable("fournisseur-id") Long fournisseurId) {
         return factureService.getFacturesByFournisseur(fournisseurId);
     }
 
-    // http://localhost:8089/SpringMVC/facture/assignOperateurToFacture/1/1
+   
     @PutMapping(value = "/assignOperateurToFacture/{idOperateur}/{idFacture}")
     public void assignOperateurToFacture(@PathVariable("idOperateur") Long idOperateur, @PathVariable("idFacture") Long idFacture) {
         factureService.assignOperateurToFacture(idOperateur, idFacture);
     }
 
-    // http://localhost:8089/SpringMVC/facture/pourcentageRecouvrement/{startDate}/{endDate}
     @GetMapping(value = "/pourcentageRecouvrement/{startDate}/{endDate}")
     public float pourcentageRecouvrement(
             @PathVariable(name = "startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date startDate,

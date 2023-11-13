@@ -3,3 +3,4 @@
 !/src/
 !pom.xml
 !.gitignore
+sonar.properties

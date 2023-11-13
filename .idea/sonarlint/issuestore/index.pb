@@ -55,3 +55,5 @@ a
 1src/test/java/tn/esprit/rh/achat/FactureTest.java,a\f\af53a0aaf718b14ada1ebccbcd2f2c3931c36261
 c
 3src/test/java/tn/esprit/rh/achat/OperateurTest.java,7\5\7558885d9bff4e4a6407f2c30440adc8ae48bdf8
+x
+Hsrc/main/java/tn/esprit/rh/achat/entities/dto/OperateurRequestModel.java,9\5\95be78e2749833d7cc0f20708bcb57b716c6881b
