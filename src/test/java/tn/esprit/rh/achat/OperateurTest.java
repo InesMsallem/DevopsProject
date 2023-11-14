@@ -48,3 +48,4 @@ public class OperateurTest {
         verify(operateurRepository).deleteById((Long) any());
     }
 }
+
