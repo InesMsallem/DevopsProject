@@ -7,7 +7,7 @@ services:
       - 8089:8089
     image: achat-image
     environment:
-      - spring.datasource.url=jdbc:mysql://db-mysql:3006/achat?createDatabaseIfNotExists=true
+      - spring.datasource.url=jdbc:mysql://db-mysql:3306/achat?createDatabaseIfNotExists=true
       - spring.datasource.username=root
     depends_on:
       - db-mysql
@@ -20,7 +20,7 @@ services:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=achat
     ports:
-      - "3006:3006"
+      - "3306:3306"
     volumes:
       - mysql_data:/var/lib/mysql
 
