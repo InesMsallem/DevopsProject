@@ -9,6 +9,8 @@ services:
     environment:
       - spring.datasource.url=jdbc:mysql://db-mysql:3306/achat?createDatabaseIfNotExists=true
       - spring.datasource.username=root
+      - spring.datasource.password=root
+
     depends_on:
       - db-mysql
 
@@ -18,8 +20,7 @@ services:
     restart: unless-stopped
     environment:
       MYSQL_DATABASE: achat
-      MYSQL_USER: ahmed
-      MYSQL_PASSWORD: ahmed123
+      MYSQL_ROOT_PASSWORD: root
     ports:
       - "3306:3306"
     volumes:
