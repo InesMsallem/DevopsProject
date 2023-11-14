@@ -3,4 +3,5 @@
 !/src/
 !pom.xml
 !.gitignore
-sonar.properties
+!docker-compose.yml
+!Dockerfile
