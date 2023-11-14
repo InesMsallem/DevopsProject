@@ -17,10 +17,8 @@ services:
     container_name: mysql_new
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: achat
-      MYSQL_USER: ines
-      MYSQL_PASSWORD: ines123
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=achat
     ports:
       - "3006:3006"
     volumes:
