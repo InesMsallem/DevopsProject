@@ -1,21 +1,20 @@
 version: '3.4'
 services:
-
-  achat-image:
+  spring-image:
     build: .
     ports:
-      - 8089:8089
-    image: achat-image
+      - 3000:3000
+    image: spring-image
     environment:
-      - spring.datasource.url=jdbc:mysql://db-mysql:3306/achat?createDatabaseIfNotExists=true
+      - spring.datasource.url=jdbc:mysql://db:3306/achat?createDatabaseIfNotExists=true
       - spring.datasource.username=root
       - spring.datasource.password=root
     depends_on:
       - db-mysql
 
   db-mysql:
-    image: mysql:5.7
-    container_name: mysql_new
+    image: mysql:latest
+    container_name: db
     restart: unless-stopped
     environment:
       - MYSQL_ROOT_PASSWORD=root
@@ -23,7 +22,36 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - mysql_data:/var/lib/mysql
+      - mysql-data:/var/lib/mysql
+    
+  prometheus:
+    container_name: prometheus
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - "./prometheus.yml:/etc/prometheus/prometheus.yml"
+    privileged: true
+    # depends_on:
+    #   - cadvisor
+
+  grafana:
+    container_name: grafana
+    image: grafana/grafana:latest
+    ports:
+      - "8040:8040"
+    environment:
+      - GF_PATHS_PROVISIONING=/etc/grafana/provisioning
+      - DS_PROMETHEUS=prometheus
+    volumes:
+      - "grafana-data:/var/lib/grafana"
+      - "./datasources.yml:/etc/grafana/provisioning/datasources/datasources.yml"
+      - "./:/var/lib/grafana/dashboards"
+      - "./default.yaml:/etc/grafana/provisioning/dashboards/default.yaml"
+    privileged: true
+    depends_on:
+      - prometheus
 
 volumes:
-  mysql_data:
+  mysql-data:
+  grafana-data:
