@@ -27,7 +27,7 @@ services:
 
   prometheus:
     image: prom/prometheus
-    container_name: prometheus
+    container_name: prometheus_new
     restart: unless-stopped
     ports:
       - "9090:9090"
