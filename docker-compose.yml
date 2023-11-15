@@ -40,7 +40,7 @@ services:
 
   grafana:
     image: grafana/grafana
-    container_name: grafana
+    container_name: grafana_new
     restart: unless-stopped
     ports:
       - "3000:3000"
