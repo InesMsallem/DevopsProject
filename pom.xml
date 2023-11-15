@@ -75,6 +75,13 @@
 			<version>0.8.7</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>io.micrometer</groupId>
+			<artifactId>micrometer-registry-prometheus</artifactId>
+			<version>1.8.4</version>
+		</dependency>
+
+
 	</dependencies>
 
 
