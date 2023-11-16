@@ -1,7 +1,10 @@
+.git
+target
+
 # Ignore all files and directories except src and pom.xml
-/*
-!/src/
-!pom.xml
-!.gitignore
-!docker-compose.yml
-!Dockerfile
+# /*
+# !/src/
+# !pom.xml
+# !.gitignore
+# !docker-compose.yml
+# !Dockerfile

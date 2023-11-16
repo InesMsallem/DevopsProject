@@ -1,0 +1,16 @@
+grafana:
+    container_name: grafana
+    image: grafana/grafana:latest
+    ports:
+      - "8040:8040"
+    environment:
+      - GF_PATHS_PROVISIONING=/etc/grafana/provisioning
+      - DS_PROMETHEUS=prometheus
+    volumes:
+      - "grafana-data:/var/lib/grafana"
+      - "./datasources.yml:/etc/grafana/provisioning/datasources/datasources.yml"
+      - "./:/var/lib/grafana/dashboards"
+      - "./default.yaml:/etc/grafana/provisioning/dashboards/default.yaml"
+    privileged: true
+    depends_on:
+      - prometheus
