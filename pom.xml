@@ -115,18 +115,16 @@
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.8.6</version>
+				<version>0.8.4</version>
 				<executions>
-					<!--first execution : for preparing JaCoCo runtime agent-->
 					<execution>
-						<id>prepare-agent</id>
+						<id>default-prepare-agent</id>
 						<goals>
 							<goal>prepare-agent</goal>
 						</goals>
 					</execution>
-					<!--second execution : for creating code coverage reports-->
 					<execution>
-						<id>report</id>
+						<id>jacoco-report</id>
 						<phase>test</phase>
 						<goals>
 							<goal>report</goal>
@@ -154,7 +152,22 @@
 				<plugin>
 					<groupId>org.jacoco</groupId>
 					<artifactId>jacoco-maven-plugin</artifactId>
-					<version>0.8.2</version>
+					<version>0.8.4</version>
+					<executions>
+						<execution>
+							<id>default-prepare-agent</id>
+							<goals>
+								<goal>prepare-agent</goal>
+							</goals>
+						</execution>
+						<execution>
+							<id>jacoco-report</id>
+							<phase>test</phase>
+							<goals>
+								<goal>report</goal>
+							</goals>
+						</execution>
+					</executions>
 				</plugin>
 			</plugins>
 		</pluginManagement>
