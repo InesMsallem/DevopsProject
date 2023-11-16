@@ -3,3 +3,5 @@
 !/src/
 !pom.xml
 !.gitignore
+!docker-compose.yml
+!Dockerfile
