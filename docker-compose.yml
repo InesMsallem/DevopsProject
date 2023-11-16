@@ -25,13 +25,5 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
 
-  prometheus:
-    image: prom/prometheus
-    container_name: prometheus
-    volumes:
-      - ./env/prometheus.yml:/etc/prometheus/prometheus.yml
-    ports:
-      - 9090:9090
-
 volumes:
   mysql_data:
