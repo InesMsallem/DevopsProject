@@ -1,19 +1,6 @@
 package tn.esprit.rh.achat;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyLong;
-import static org.mockito.Mockito.when;
-
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
-
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -24,27 +11,22 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.modelmapper.ModelMapper;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import tn.esprit.rh.achat.entities.CategorieFournisseur;
-import tn.esprit.rh.achat.entities.DetailFacture;
-import tn.esprit.rh.achat.entities.Facture;
-import tn.esprit.rh.achat.entities.Fournisseur;
-import tn.esprit.rh.achat.entities.Operateur;
-import tn.esprit.rh.achat.entities.Produit;
-import tn.esprit.rh.achat.entities.Reglement;
+import tn.esprit.rh.achat.entities.*;
 import tn.esprit.rh.achat.entities.dto.FactureRequestModel;
-import tn.esprit.rh.achat.repositories.DetailFactureRepository;
-import tn.esprit.rh.achat.repositories.FactureRepository;
-import tn.esprit.rh.achat.repositories.FournisseurRepository;
-import tn.esprit.rh.achat.repositories.OperateurRepository;
-import tn.esprit.rh.achat.repositories.ProduitRepository;
-import tn.esprit.rh.achat.repositories.ReglementRepository;
-
-import lombok.extern.slf4j.Slf4j;
+import tn.esprit.rh.achat.repositories.*;
 import tn.esprit.rh.achat.services.FactureServiceImpl;
 import tn.esprit.rh.achat.services.FournisseurServiceImpl;
 import tn.esprit.rh.achat.services.OperateurServiceImpl;
 import tn.esprit.rh.achat.services.ReglementServiceImpl;
+
+import java.util.*;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.Mockito.when;
 
 
 @RunWith(SpringRunner.class)
