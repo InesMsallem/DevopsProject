@@ -85,6 +85,28 @@
 			<scope>test</scope>
 		</dependency>
 
+
+		<dependency>
+			<groupId>io.prometheus</groupId>
+			<artifactId>simpleclient_hotspot</artifactId>
+			<version>0.2.0</version>
+		</dependency>
+		<!-- Logback -->
+		<dependency>
+			<groupId>io.prometheus</groupId>
+			<artifactId>simpleclient_logback</artifactId>
+			<version>0.2.0</version>
+		</dependency>
+		<!-- For spring boot-->
+		<dependency>
+			<groupId>io.prometheus</groupId>
+			<artifactId>simpleclient_spring_boot</artifactId>
+			<version>0.2.0</version>
+		</dependency>
+
+
+
+
 	</dependencies>
 	<distributionManagement>
 		<repository>
