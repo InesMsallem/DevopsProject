@@ -25,29 +25,5 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
 
-  prometheus:
-    image: prom/prometheus
-    container_name: prometheus_new
-    restart: unless-stopped
-    ports:
-      - "9090:9090"
-    volumes:
-      - ./prometheus:/etc/prometheus
-    command:
-      - '--config.file=/etc/prometheus/prometheus.yml'
-    depends_on:
-      - achat-image
-
-  grafana:
-    image: grafana/grafana
-    container_name: grafana_new
-    restart: unless-stopped
-    ports:
-      - "4000:4000"
-    environment:
-      - GF_SECURITY_ADMIN_PASSWORD=admin
-    depends_on:
-      - prometheus
-
 volumes:
   mysql_data:
