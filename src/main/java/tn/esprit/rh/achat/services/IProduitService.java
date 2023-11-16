@@ -1,18 +1,20 @@
 package tn.esprit.rh.achat.services;
 
 import tn.esprit.rh.achat.entities.Produit;
+import tn.esprit.rh.achat.entities.dto.ProduitRequestModel;
 
 import java.util.List;
+
 
 public interface IProduitService {
 
 	List<Produit> retrieveAllProduits();
 
-	Produit addProduit(Produit p);
+	Produit addProduit(ProduitRequestModel p);
 
 	void deleteProduit(Long id);
 
-	Produit updateProduit(Produit p);
+	Produit updateProduit(ProduitRequestModel prod);
 
 	Produit retrieveProduit(Long id);
 
