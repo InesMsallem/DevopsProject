@@ -1,4 +1,4 @@
 FROM openjdk:8-jre-alpine
-WORKDIR /app
-COPY /app/target/*.jar ./spring-app.jar
-CMD ["java", "-jar", "/app/spring-app.jar"]
+EXPOSE 3000
+ADD ./target/*.jar ./spring-app.jar
+ENTRYPOINT ["java","-jar","/spring-app.jar.jar"]
