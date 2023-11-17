@@ -16,7 +16,7 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
-		<sonar.login>squ_91ef1a5a45af6ee0f9e8beec81643f9224638cc4</sonar.login>
+		<sonar.login>squ_cb75d84656d58e7c30bece981a1c543b737c244b</sonar.login>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -31,7 +31,7 @@
 		<dependency>
 			<groupId>org.modelmapper</groupId>
 			<artifactId>modelmapper</artifactId>
-			<version>3.1.1</version>
+			<version>3.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -46,7 +46,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 
 		<dependency>
 			<groupId>mysql</groupId>
@@ -77,7 +76,7 @@
 		<dependency>
 			<groupId>org.jacoco</groupId>
 			<artifactId>org.jacoco.agent</artifactId>
-			<version>0.8.8</version>
+			<version>0.8.7</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -86,13 +85,6 @@
 			<artifactId>micrometer-registry-prometheus</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
-
-
 	</dependencies>
 	<distributionManagement>
 		<repository>
