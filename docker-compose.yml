@@ -32,8 +32,8 @@ services:
     volumes:
       - "./prometheus.yml:/etc/prometheus/prometheus.yml"
     privileged: true
-    # depends_on:
-    #   - cadvisor
+    depends_on:
+      - cadvisor
 
   grafana:
     container_name: grafana
