@@ -56,15 +56,19 @@ pipeline {
             }
         }
         stage('Push images to Dockerhub') {
-            steps{
-                sh 'docker login -u ye55ine -p ih$FqNF)p45F_Ps'
-                sh 'docker push ye55ine/devops:$IMAGE_TAG'
+            steps {
+                script {              
+                    sh 'docker login -u ye55ine -p ih$FqNF)p45F_Ps'
+                    sh 'docker push ye55ine/devops:$IMAGE_TAG'
+                }
             }
-         }
+        }
         stage('Run Docker Compose') {
             steps {
-                sh 'docker compose down'
-                sh 'docker compose up -d'
+                script {
+                    sh 'docker compose down'
+                    sh 'docker compose up -d'
+                }
             }
         }
     }
