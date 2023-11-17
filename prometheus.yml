@@ -2,7 +2,7 @@ grafana:
     container_name: grafana
     image: grafana/grafana:latest
     ports:
-      - "8040:8040"
+      - "3000:3000"
     environment:
       - GF_PATHS_PROVISIONING=/etc/grafana/provisioning
       - DS_PROMETHEUS=prometheus
