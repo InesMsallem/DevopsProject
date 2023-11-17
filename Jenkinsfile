@@ -57,12 +57,23 @@ pipeline {
         }
         stage('Push images to Dockerhub') {
             steps {
-                script {              
-                    sh 'docker login -u ye55ine -p ih$FqNF)p45F_Ps'
+                script {
+                    sh 'docker login --username ye55ine --password-stdin < ./pw.txt'
                     sh 'docker push ye55ine/devops:$IMAGE_TAG'
                 }
             }
         }
+        // stage('Push images to Dockerhub') {
+        //     steps {
+        //         script {
+        //             // Use Jenkins credentials for Dockerhub username and password
+        //             withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials', passwordVariable: 'ye55ine', usernameVariable: 'ih$FqNF)p45F_Ps')]) {
+        //                 sh 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
+        //                 sh 'docker push ye55ine/devops:$IMAGE_TAG'
+        //             }
+        //         }
+        //     }
+        // }
         stage('Run Docker Compose') {
             steps {
                 script {
