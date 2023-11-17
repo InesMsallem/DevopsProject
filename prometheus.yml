@@ -30,7 +30,7 @@ scrape_configs:
   - job_name: jenkins
     metrics_path: /prometheus
     static_configs:
-      - targets: ['http://172.28.93.16:8080']
+      - targets: ['172.28.93.16:8080']
   - job_name: "cadvisor"
     static_configs:
-      - targets: ["http://172.28.93.16:9091"]
+      - targets: ["172.28.93.16:9091"]
